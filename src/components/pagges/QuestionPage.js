@@ -1,9 +1,18 @@
-import React from "react";
+import React ,{useState,useEffect}from "react";
 
 import Footer from "../UI/Footer";
 import { useNavigate, Link } from "react-router-dom";
 import Header from "../UI/Header";
 import Feedback from "./Feedback";
+
+import QuestionData from "../QuestionData"
+
+
+
+
+
+
+const API_URL="https://opentdb.com/api.php?amount=10&categpory=14&difficulty=easy&type=multiple";
 
 const QuestionPage = () => {
   const navigate = useNavigate();
@@ -11,158 +20,78 @@ const QuestionPage = () => {
   const handleClick = () => {
     navigate("/Feedback");
   };
+  
+
+  // question 
+
+  const [questions,setQuestions] =useState([""]);
+  const [currentIndex,setCurrentIndex] =useState(0);
+  const [score,setScore]=useState(0);
+  const [chooseAnswer,setChooseAnswer]=useState(false);
 
 
 
-  return (
-    <div className="bg-gray-100">
+  useEffect(() => {
+    fetch(API_URL).then(res =>res.json())
+    .then(data =>{
+      console.log(data)
+      setQuestions(data.results);
+     
       
-      <div class="flex  py-4 px-8">
-        <div class="flex-1 bg-white">
-          <div class="flex flex-col mx-4 items-center justify-center  ">
-            <div className="inline-flex space-x-4 space-y-8  ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
-                </div>
-              </div>
-            </div>
+    })
+   
+  }, [])
 
-            <div className="bg-yellow-500 w-1 h-10"></div>
-            <div className="inline-flex space-x-4 space-y-8 ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
-                </div>
-              </div>
-            </div>
+const handleAnswer =(answer)=>{
 
-            <div className="bg-yellow-500 w-1 h-10"></div>
+  if(!chooseAnswer){
+if (answer === questions[currentIndex].correct_answer) {
+    setScore(score + 1 );
+    
+  }
+  }
 
-            <div className="inline-flex space-x-4 space-y-8 ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
-                </div>
-              </div>
-            </div>
-                  
-            <div className="bg-yellow-500 w-1 h-10"></div>
-
-            <div className="inline-flex space-x-4 space-y-8 ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
-                  1
-                </div>
-              </div>
-            </div>
-            <div className="bg-yellow-500 w-1 h-10"></div>
-
-            <div className="inline-flex   space-x-4 space-y-8 mb-8">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center   ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex-none  bg-white">
-          <div className="flex flex-col items-center justify-center">
-            <div>
-              <h1>
-                but still need the element to resemble a link, use a button and
-                change it with appropriate styles. Learn more: 5
-              </h1>
-            </div>
-
-            <div className="flex flex-col">
-              <div>
-                <input
-                  type="radio"
-                  name="q1"
-                  value="answer"
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
-                />
-                <label>ikibazo cyambere</label>
-              </div>
-
-              <div>
-                <input
-                  type="radio"
-                  name="q1"
-                  value="answer"
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
-                />
-                <label>ikibazo cyambere</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="q1"
-                  value="answer"
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
-                />
-                <label>ikibazo cyambere</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="q1"
-                  value="answer"
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
-                />
-                <label>ikibazo cyambere</label>
-              </div>
-            </div>
-
-            <div>
-              <div className="flex   ">
-                <button class=" bg-yellow-500 text-white mx-8 transform hover:scale-110 motion-reduce:transform-none ...">
-                  Back
-                </button>
-                <button class="  bg-yellow-500 text-white  transform hover:scale-110 motion-reduce:transform-none ...">
-                  Next
-                </button>
+  
+  setChooseAnswer(true);
 
 
-                 <button
-              onClick={handleClick}
-className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 "
-              >
-submit
+// const newIndex = currentIndex + 1;
+//   setCurrentIndex(newIndex);
+ 
+  
+}
+
+const handleNext = () =>{
+  setChooseAnswer(false)
+
+  setCurrentIndex(currentIndex + 1);
+
+}
+
+  return  questions.length > 0 ? (
+    <div className="bg-gray-100">
+
+    {currentIndex >= questions.length ? (
+
+      <div className=" flex items-center justify-center m-4"> 
+          
+            <button 
+                   className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 ">
+                submit
               </button>
-              </div>
-            </div>
+          
           </div>
-        </div>
-
-        <div class="flex-1  bg-white">
-          <div className="flex flex-col items-center justify-center">
-            <span>
-              <h1>Time Left</h1>
-            </span>
-            <div className="inline-flex space-x-4 space-y-8  ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
-                10
-              </div>
-            </div>
-
-            <div className="bg-yellow-500 w-1 h-20"></div>
-
-            <div className="inline-flex space-x-4 space-y-8  ">
-              <div class=" w-40 h-40 bg-yellow-300 rounded-full flex items-center justify-center    ">
-                <div class=" w-20 h-20 bg-white rounded-full text-black text-center font-bold    ">
-                  00 : 00
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  ) :  <QuestionData data={questions[currentIndex]} handleAnswer={handleAnswer}  handleNext={handleNext}/> }
+    
+ 
       <Footer />
     </div>
+  ):(
+  
+<div class="flex justify-center items-center">
+  <div
+    class=" loader ease-linear   rounded-full border-8 border-t-8 border-gray-200   h-32   w-32 ">loading ....</div>
+</div>
   );
 };
 

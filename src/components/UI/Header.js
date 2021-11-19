@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div>
       {/* <!-- Navbar goes here --> */}
-      <nav className="  bg-white shadow-lg  mb-2 overflow-hidden  z-10">
+      <nav className="  bg-white shadow-lg  mb-2 overflow-hidden  ">
         <div className="flex flex-row justify-around">
           <div className="space-x-100">
             {/* <!-- Website Logo --> */}
