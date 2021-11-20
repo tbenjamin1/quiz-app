@@ -28,6 +28,8 @@ const QuestionPage = () => {
   const [currentIndex,setCurrentIndex] =useState(0);
   const [score,setScore]=useState(0);
   const [chooseAnswer,setChooseAnswer]=useState(false);
+  const [passed,setPassed] = useState(0);
+  const [seconds, setSeconds] = React.useState(10);
 
 
 
@@ -39,6 +41,12 @@ const QuestionPage = () => {
      
       
     })
+// timer
+if (seconds > 0) {
+      setTimeout(() => setSeconds(seconds - 1), 1000);
+    } else {
+      setSeconds('BOOOOM!');
+    }
    
   }, [])
 
@@ -47,6 +55,13 @@ const handleAnswer =(answer)=>{
   if(!chooseAnswer){
 if (answer === questions[currentIndex].correct_answer) {
     setScore(score + 1 );
+    
+  }
+// passed questions  question
+  }
+  if(!chooseAnswer){
+if (answer != questions[currentIndex].correct_answer) {
+    setPassed(passed + 1 );
     
   }
   }
@@ -68,6 +83,13 @@ const handleNext = () =>{
 
 }
 
+const handleBack =()=>{
+    setChooseAnswer(false)
+
+  setCurrentIndex(currentIndex - 1);
+
+}
+
   return  questions.length > 0 ? (
     <div className="bg-gray-100">
 
@@ -75,13 +97,13 @@ const handleNext = () =>{
 
       <div className=" flex items-center justify-center m-4"> 
           
-            <button 
-                   className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 ">
-                submit
-              </button>
+           <Feedback win={passed}  data={questions}  marks={score} />
           
           </div>
-  ) :  <QuestionData data={questions[currentIndex]} handleAnswer={handleAnswer}  handleNext={handleNext}/> }
+  ) :  <QuestionData data={questions[currentIndex]} handleAnswer={handleAnswer} timer={seconds} handleBack={handleBack} 
+   handleNext={handleNext}
+   
+   index={currentIndex}/> }
     
  
       <Footer />
@@ -90,7 +112,7 @@ const handleNext = () =>{
   
 <div class="flex justify-center items-center">
   <div
-    class=" loader ease-linear   rounded-full border-8 border-t-8 border-gray-200   h-32   w-32 ">loading ....</div>
+    class=" loader ease-linear  flex items-center justify-center rounded-full border-8 border-t-8 border-gray-200   h-32   w-32 ">loading ....</div>
 </div>
   );
 };

@@ -3,9 +3,9 @@ import InputAsnwer from "./InputAsnwer";
 
 
 
-const QuestionData = ({handleAnswer,handleNext,data:{question,correct_answer,incorrect_answers},}) => {
+const QuestionData = ({handleAnswer,timer,handleBack,handleNext,index,data:{question,correct_answer,incorrect_answers},}) => {
 
-const shuffledAnswers =[correct_answer ].sort(() => Math.random()-0.5);
+const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
     return (
         <div>
  
@@ -108,9 +108,11 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random()-0.5);
 
             <div>
               <div className="flex   ">
-                <button class=" bg-yellow-500 text-white mx-8 transform hover:scale-110 motion-reduce:transform-none ...">
+
+              { index >0 &&  <button class=" bg-yellow-500 text-white mx-8 transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleBack} >
                   Back
-                </button>
+                </button>}
+               
                 <button class="  bg-yellow-500 text-white  transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleNext} >
                   Next
                 </button>
@@ -119,14 +121,7 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random()-0.5);
               </div>
             </div>
           </div>
-          <div className=" flex items-center justify-center m-4"> 
-          
-            <button 
-                   className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 ">
-                submit
-              </button>
-          
-          </div>
+         
         </div>
 
         <div class="flex-1  bg-white">
@@ -146,6 +141,7 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random()-0.5);
               <div class=" w-40 h-40 bg-yellow-300 rounded-full flex items-center justify-center    ">
                 <div class=" w-20 h-20 bg-white rounded-full text-black flex items-center justify-center  font-bold    ">
                   00 : 00
+                  {timer}
                 </div>
               </div>
             </div>

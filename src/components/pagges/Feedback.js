@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../UI/Footer";
 import Header from "../UI/Header";
 
-const Feedback = () => {
+const Feedback = (props) => {
 
   
   return (
@@ -16,13 +16,13 @@ const Feedback = () => {
             <div class="flex flex-col my-4  justify-center   items-center ">
               <div className="my-2">
                 <p className="text-sm font-semibold">Marks</p>
-                <span className="text-xl font-bold">0</span>
+                <span className="text-xl font-bold">{props.marks}</span>
               </div>
               <div className="my-2">
                 <p className="text-sm font-semibold text-center">
                   Passed Question
                 </p>
-                <span className="text-xl font-bold">0/5</span>
+                <span className="text-xl font-bold">{props.win}/5</span>
               </div>
               <div className=" text-center justify-center my-4  items-center">
                 <p className="text-sm font-semibold">Time Used ⏲ </p>
@@ -44,28 +44,16 @@ const Feedback = () => {
             <h1 className=" text-center font-bold mb-4 text-xl">
               Develop Your Skills
             </h1>
-            <div>
-              <span className="my-2">
-                <h1 className="my-4">Q1</h1>
-                <p>answer</p>
+              <div class="flex flex-col   justify-center   items-center ">
+            {props.data.map( dataa =>  <div className=" flex justify-center   items-center p-4" >
+              <span className="">
+                <h1 className="">{dataa.question}</h1>
+                <p className="font-bold">{dataa.correct_answer}</p>
               </span>
-              <span className="my-2">
-                <h1 className="my-4">Q1</h1>
-                <p>answer</p>
-              </span>
-              <span className="my-2">
-                <h1>Q1</h1>
-                <p>answer</p>
-              </span>
-              <span className="my-2">
-                <h1 className="my-4">Q1</h1>
-                <p>answer</p>
-              </span>
-              <span className="my-2">
-                <h1 className="my-4">Q1</h1>
-                <p>answer</p>
-              </span>
-            </div>
+                 </div>
+               )}
+                 </div>  
+            
           </div>
         </div>
         {/* bbb */}

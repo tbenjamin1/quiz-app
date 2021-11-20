@@ -26,8 +26,8 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div>
-                  <p>gfgffvgufffubghbig</p>
-                </div>
+                  <p>  _Read each question carefully</p>
+                  </div>
               </div>
               <div className="inline-flex space-x-4 space-y-8 ">
                 <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
@@ -36,7 +36,7 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div>
-                  <p>gfgffvgufffubghbig</p>
+                  <p>   _ After responding to a question, click on the "Next</p>
                 </div>
               </div>
               <div className="inline-flex space-x-4 space-y-8 ">
@@ -46,7 +46,7 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div>
-                  <p>gfgffvgufffubghbig</p>
+                  <p> _If you select an incorrect response for a question, you can try again before you submit.</p>
                 </div>
               </div>
               <div className="inline-flex space-x-4 space-y-8 ">
@@ -56,7 +56,7 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div>
-                  <p>gfgffvgufffubghbig</p>
+                  <p>_The total score for the quiz is based on your responses  to all questions</p>
                 </div>
               </div>
               <div className="inline-flex   space-x-4 space-y-8 mb-8">
@@ -66,7 +66,7 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div>
-                  <p>gfgffvgufffubghbig</p>
+                  <p>_   Question"button at the bottom to go to the next questino</p>
                 </div>
               </div>
 

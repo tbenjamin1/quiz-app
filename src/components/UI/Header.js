@@ -20,7 +20,7 @@ const Header = () => {
           <div className=" md:flex items-center space-x-1">
             <a
               href="/"
-              className="py-4 px-2 text-yellow-500 border-b-4 border-yellow-500 font-semibold "
+              className="py-4 px-2 text-gray-500 hover:text-yellow-500 font-semibold "
             >
               Home
             </a>
