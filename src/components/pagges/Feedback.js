@@ -52,7 +52,7 @@ const Feedback = (props) => {
                   {props.data.map( dataa =>  <div className=" flex justify-center   items-center p-4" >
            
                 <span className="text-center">
-                <h1 className=" font-bold text-gray-700 uppercase">{dataa.question}</h1>
+                <h1 className=" font-bold text-gray-700 uppercase">{dataa.question} {dataa.length}</h1>
                 <p className="font-bold text-sm">{dataa.correct_answer}</p>
                 </span>
                  </div>

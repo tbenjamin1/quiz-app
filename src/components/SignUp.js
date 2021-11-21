@@ -5,10 +5,13 @@ import signup from "./assests/images/signup.png";
 
 const SignUp = () => {
   return (
-    <div className="bg-gray-100">
-     
-      <div className="flex flex-row w-full justify-center items-center sm:flex flex-col py-4 px-2">
-        <div className="bg-yellow-200  absolute-right-2 rounded z-0 shadow border  p-6 w-64">
+    <div className="bg-gray-100 my-2 ">
+          <div className="container mx-auto px-6">
+            <div className="sm:flex sm:mt-8">
+              <div className="  flex justify-center items-center  sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row ">
+
+      {/* 11 */}
+        <div className="bg-yellow-200  absolute  rounded z-10 shadow border  p-6 w-64">
           <h5 className="text-center text-xl font-bold mb-4 mt-0">Sign Up</h5>
           <form
             action=""
@@ -59,13 +62,21 @@ const SignUp = () => {
           </form>
         </div>
 
-        <div className="bg-white  rounded shadow border p-6 w-64">
+{/* 22 */}
+
+        <div className=" relative  bg-white -left-60 rounded shadow border p-6 w-64">
           <h5 className="text-3xl font-bold mb-4 mt-0">welcome</h5>
           <div className=" bg-white justify-center items-center w-full">
             <img src={signup} />
           </div>
         </div>
+
+        {/* eendd */}
+
       </div>
+       </div>
+        </div>
+
       <Footer />
     </div>
   );
