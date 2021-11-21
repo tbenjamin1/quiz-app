@@ -3,6 +3,7 @@ import Footer from "./UI/Footer";
 import { useNavigate, Link } from "react-router-dom";
 import signup from "./assests/images/signup.png";
 import QuestionPage from "./pagges/QuestionPage";
+import InputAsnwer from './InputAsnwer';
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -12,74 +13,75 @@ const Homepage = () => {
   };
 
   return (
-    <div className="bg-gray-100">
-      <div className="flex flex-col   py-4 px-8">
-        <div className="flex flex-row ">
+     <div className=" bg-gray-200  my-2 text-black-500 body-font relative">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex  sm:w-full text-center w-full mb-12">
           {/* left */}
-          <div class="flex flex-col w-1/2  bg-white ">
+          <div className="flex flex-col w-1/2  bg-white   ">
             <h1 className=" text-center font-bold m-8 text-xl">Instruction</h1>
-            <div class="flex flex-col mx-4 ">
+            <div className="flex flex-col mx-4 ">
               <div className="inline-flex space-x-4 space-y-8  ">
-                <div class=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
-                  <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p>  _Read each question carefully</p>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  _Read each question carefully</p>
                   </div>
               </div>
               <div className="inline-flex space-x-4 space-y-8 ">
-                <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
-                  <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p>   _ After responding to a question, click on the "Next</p>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">   _ After responding to a question, click on the "Next</p>
                 </div>
               </div>
               <div className="inline-flex space-x-4 space-y-8 ">
-                <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
-                  <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p> _If you select an incorrect response for a question, you can try again before you submit.</p>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base"> _If you select an incorrect response for a question, you can try again before you submit.</p>
                 </div>
               </div>
               <div className="inline-flex space-x-4 space-y-8 ">
-                <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
-                  <div class=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p>_The total score for the quiz is based on your responses  to all questions</p>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">_The total score for the quiz is based on your responses  to all questions</p>
                 </div>
               </div>
-              <div className="inline-flex   space-x-4 space-y-8 mb-8">
-                <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center   ">
-                  <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+             <div className="inline-flex space-x-4 space-y-8 ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p>_   Question"button at the bottom to go to the next questino</p>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">_The total score for the quiz is based on your responses  to all questions</p>
                 </div>
               </div>
 
               <div>
                 <h1 className=" text-center font-bold  my-8 text-xl">
                   Goog Lucky 🙋{" "}
+              
                 </h1>
               </div>
             </div>
           </div>
           {/* right */}
 
-          <div class="flex flex-col  w-1/2  justify-center   items-center bg-yellow-100">
+          <div className="flex flex-col  w-1/2  justify-center   items-center bg-yellow-100 sm:flex items-center justify-center ">
             <h1 className=" text-center font-bold m-8 text-xl">
               Develop Your Skills
             </h1>
@@ -184,59 +186,59 @@ className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover
         {/* end of section */}
 
         <div className="bg-white my-2 ">
-          <div class="container mx-auto px-6">
-            <div class="sm:flex sm:mt-8">
-              <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
-                <div class="flex flex-col">
-                  <span class="font-bold text-gray-700 uppercase mb-2">
+          <div className="container mx-auto px-6">
+            <div className="sm:flex sm:mt-8">
+              <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+                <div className="flex flex-col">
+                  <span className="font-bold text-gray-700 uppercase mb-2">
                     Recents Quiz
                   </span>
 
-                  <span class="flex space-x-4 ">
-                    <h3 class="text-sm font-bold  text-yellow-500">
+                  <span className="flex space-x-4 ">
+                    <h3 className="text-sm font-bold  text-yellow-500">
                       street kg 45st
                     </h3>
                   </span>
-                  <span class="my-2">
+                  <span className="my-2">
                     <a
                       href="#"
-                      class="text-yellow-500  text-md hover:text-yellow-500"
+                      className="text-yellow-500  text-md hover:text-yellow-500"
                     >
                       gisozi
                     </a>
                   </span>
                 </div>
-                <div class="flex flex-col">
-                  <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
+                <div className="flex flex-col">
+                  <span className="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
                     performance
                   </span>
-                  <span class="flex space-x-4 ">
-                    <h3 class="text-sm font-bold text-yellow-500  ">
+                  <span className="flex space-x-4 ">
+                    <h3 className="text-sm font-bold text-yellow-500  ">
                       +250-787438701
                     </h3>
                   </span>
-                  <span class="flex space-x-4">
-                    <h3 class="text-sm font-bold  text-yellow-500">
+                  <span className="flex space-x-4">
+                    <h3 className="text-sm font-bold  text-yellow-500">
                       tbenpollyl@gmail.com
                     </h3>
                   </span>
                 </div>
-                <div class="flex flex-col">
-                  <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
+                <div className="flex flex-col">
+                  <span className="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
                     courses
                   </span>
-                  <span class="my-2">
+                  <span className="my-2">
                     <a
                       href="#"
-                      class="text-yellow-500  text-md hover:text-yellow-500"
+                      className="text-yellow-500  text-md hover:text-yellow-500"
                     >
                       accessibility
                     </a>
                   </span>
-                  <span class="my-2">
+                  <span className="my-2">
                     <a
                       href="#"
-                      class="text-yellow-500  text-md hover:text-yellow-500"
+                      className="text-yellow-500  text-md hover:text-yellow-500"
                     >
                       usability
                     </a>

@@ -8,7 +8,7 @@ const Login = () => {
     <div className="bg-gray-100">
       {/* <Header /> */}
 
-      <div className="flex flex-row justify-center items-center space-x-4 py-4 px-2">
+      <div className="flex flex-row justify-center items-center sm:flex flex-col space-x-4 py-4 px-2">
         {/* left part  */}
         <div className=" items-center">
           <span className="my-20 text-xl font-bold">
@@ -20,36 +20,36 @@ const Login = () => {
         </div>
         {/* right part */}
         <div>
-          <div class="relative  pr-9">
-            {/* <div class="absolute z-0 w-40 h-40 bg-gray-300 rounded-full -left-10 -top-20"></div> */}
-            <div class="absolute z-0 w-20 h-20 bg-blue-200 rounded-full flex justify-center items-center  -right-40 -bottom-0">
+          <div className="relative  pr-9">
+            {/* <div className="absolute z-0 w-40 h-40 bg-gray-300 rounded-full -left-10 -top-20"></div> */}
+            <div className="absolute z-0 w-20 h-20 bg-blue-200 rounded-full flex justify-center items-center  -right-40 -bottom-0">
               🔑{" "}
             </div>
-            <div class="relative z-10 ">
+            <div className="relative z-10 ">
               <form
                 action=""
-                class=" bg-yellow-200  py-10 px-10  justify-center items-center    mx-auto rounded-lg  "
+                className=" bg-yellow-200  py-10 px-10  justify-center items-center    mx-auto rounded-lg  "
               >
-                <div class="w-full  my-8  ">
+                <div className="w-full  my-8  ">
                   <input
                     outocomplete="off"
                     placeholder="username"
                     type="text"
                     name="username"
                     out
-                    class="border border-gray-400 py-2 px-4 w-full block rounded-lg focus:outline-none
+                    className="border border-gray-400 py-2 px-4 w-full block rounded-lg focus:outline-none
                    focus:ring-4
                     "
                   />
                 </div>
-                <div class="w-full    space-y-4 ">
+                <div className="w-full    space-y-4 ">
                   <input
                     outocomplete="off"
                     placeholder="password"
                     type="password"
                     name="password"
                     out
-                    class="border border-gray-400 py-2 px-4 w-full black rounded-lg focus:outline-none
+                    className="border border-gray-400 py-2 px-4 w-full black rounded-lg focus:outline-none
                                     focus:ring-4
                                     "
                   />

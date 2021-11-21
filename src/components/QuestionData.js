@@ -1,21 +1,68 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import InputAsnwer from "./InputAsnwer";
+import { useNavigate, Link } from "react-router-dom";
+import Feedback from './pagges/Feedback';
 
 
 
-const QuestionData = ({handleAnswer,timer,handleBack,handleNext,index,data:{question,correct_answer,incorrect_answers},}) => {
+const QuestionData = ({handleAnswer,timer,handleBack,handleNext,
 
-const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
-    return (
+
+index,data:{question,correct_answer,incorrect_answers},}) => {
+
+const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/Feedback");
+  };
+
+     
+    const [ minutes, setMinutes ] = useState(1);
+    const [seconds, setSeconds ] =  useState(60);
+
+ 
+    useEffect(()=>{
+    let myInterval = setInterval(() => {
+            if (seconds > 0) {
+                setSeconds(seconds - 1);
+            }
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(myInterval)
+
+                } else {
+                    setMinutes(minutes - 1);
+                    setSeconds(59);
+                }
+            } 
+        }, 1000)
+        return ()=> {
+            clearInterval(myInterval);
+          };
+    });
+
+const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
+// const endQuiz = (data) =>{
+//     console.log(endQuiz);
+//     console.log("time");
+
+  
+// };
+
+
+
+
+    return minutes > 0 ? (
         <div>
  
-        <div class="flex  py-4 px-8">
-        <div class="flex-1 bg-white">
-          <div class="flex flex-col  items-center justify-center  ">
+        <div className="flex   justify-between    ">
+        {/* sm:flex flex-col */}
+        <div className="flex-1 bg-white ">
+          <div className="flex flex-col  items-center justify-center md:w-full  ">
          
             <div className="inline-flex mx-2 space-x-4 space-y-8  ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+              <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
+                <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                   1
                 </div>
               </div>
@@ -23,8 +70,8 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
 
             <div className="bg-yellow-500 w-1 h-10"></div>
             <div className="inline-flex space-x-4 space-y-8 ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+              <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
+                <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                   1
                 </div>
               </div>
@@ -33,8 +80,8 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
             <div className="bg-yellow-500 w-1 h-10"></div>
 
             <div className="inline-flex space-x-4 space-y-8 ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+              <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
+                <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                   1
                 </div>
               </div>
@@ -43,8 +90,8 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
             <div className="bg-yellow-500 w-1 h-10"></div>
 
             <div className="inline-flex space-x-4 space-y-8 ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
+              <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
+                <div className=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
                   1
                 </div>
               </div>
@@ -52,8 +99,8 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
             <div className="bg-yellow-500 w-1 h-10"></div>
 
             <div className="inline-flex   space-x-4 space-y-8 mb-8">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center   ">
-                <div class=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+              <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center   ">
+                <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                   1
                 </div>
               </div>
@@ -61,10 +108,12 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
           </div>
         </div>
 
-        <div class="flex-none m-2  bg-white">
+        <div className="flex-none m-2  bg-white  ">
          
           <div className="flex flex-col items-center justify-center">
-        <div>
+
+          {minutes === 0 ? <h1>time over </h1> : <h1>uracya fite igihe</h1> }
+           <div>
               <h1>
          <label>     {question}</label>
               </h1>
@@ -77,7 +126,7 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
                   name="q1" 
                   value="answer"
                   onClick = {()=>handleAnswer(shuffledAnswers[0])}
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
+                  className="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
                 />
                 <label> {shuffledAnswers[0]}</label>
               </div>
@@ -88,7 +137,7 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
                   name="q1"
                   value="answer"
                      onClick = {()=>handleAnswer(false)}
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
+                  className="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
                 />
                 <label>{shuffledAnswers[0]}</label>
               </div>
@@ -99,7 +148,7 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
                   name="q1"
                   value="answer"
                      onClick = {()=>handleAnswer(false)}
-                  class="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
+                  className="bg-gray-200 m-4 checked:bg-blue-600 checked:border-transparent ..."
                 />
                 <label>{shuffledAnswers[0]}</label>
               </div>
@@ -109,11 +158,11 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
             <div>
               <div className="flex   ">
 
-              { index >0 &&  <button class=" bg-yellow-500 text-white mx-8 transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleBack} >
+              { index >0 &&  <button className=" bg-yellow-500 text-white mx-8 transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleBack} >
                   Back
                 </button>}
                
-                <button class="  bg-yellow-500 text-white  transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleNext} >
+                <button className="  bg-yellow-500 text-white  transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleNext} >
                   Next
                 </button>
 
@@ -124,13 +173,13 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
          
         </div>
 
-        <div class="flex-1  bg-white">
+        <div className="flex-1  bg-white">
           <div className="flex flex-col items-center justify-center">
             <span>
               <h1>Time Left</h1>
             </span>
             <div className="inline-flex space-x-4 space-y-8  ">
-              <div class=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
+              <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
                 10
               </div>
             </div>
@@ -138,10 +187,17 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
             <div className="bg-yellow-500 w-1 h-20"></div>
 
             <div className="inline-flex space-x-4 space-y-8  ">
-              <div class=" w-40 h-40 bg-yellow-300 rounded-full flex items-center justify-center    ">
-                <div class=" w-20 h-20 bg-white rounded-full text-black flex items-center justify-center  font-bold    ">
-                  00 : 00
-                  {timer}
+              <div className=" w-40 h-40 bg-yellow-300 rounded-full flex items-center justify-center    ">
+                <div className=" w-20 h-20 bg-white rounded-full text-black flex items-center justify-center  font-bold    ">
+             
+               
+
+                <div>
+        { minutes === 0 && seconds === 0
+            ? null
+            : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+        }
+        </div>
                 </div>
               </div>
             </div>
@@ -149,6 +205,18 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() -0.5);
         </div>
       </div>
         </div>
+  
+
+    ) :(
+          
+<div className="flex justify-center items-center">
+  <div
+    className=" loader ease-linear  flex items-center justify-center rounded-full border-8 border-t-8 border-gray-200   h-32   w-32 ">quiz over....</div>
+     <button className="  bg-yellow-500 text-white  m-4 p-2 transform hover:scale-110 motion-reduce:transform-none ..."      onClick={handleClick} >
+                 view results 
+                </button>
+
+</div>
     )
 }
 

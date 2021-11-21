@@ -13,7 +13,7 @@ import Feedback from "./components/pagges/Feedback";
 function App() {
   return (
     <Router>
-      <div className=" justify-center ml-32 mr-32 ">
+      <div className=" justify-center  ">
         <Header />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
