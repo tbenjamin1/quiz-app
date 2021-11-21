@@ -92,7 +92,7 @@ const Homepage = () => {
                 </h1>
               </div>
             </div>
-          </div>
+           </div>
 
                {/* hhhh */}
 
@@ -114,7 +114,7 @@ const Homepage = () => {
                 Take Quiz
               </button>
             </div>
-          </div>
+           </div>
                {/* hkhahvjf */}
 
 

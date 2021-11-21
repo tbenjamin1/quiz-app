@@ -54,10 +54,13 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
 
     return minutes > 0 ? (
         <div>
- 
-        <div className="flex   justify-between    ">
-        {/* sm:flex flex-col */}
-        <div className="flex-1 bg-white ">
+
+        <div className="bg-gray-100 m-2 ">
+          <div className="container mx-auto px-6">
+            <div className="sm:flex sm:mt-8">
+              <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+               {/* first */}
+            <div className="flex-1 bg-white ">
           <div className="flex flex-col  items-center justify-center md:w-full  ">
          
             <div className="inline-flex mx-2 space-x-4 space-y-8  ">
@@ -107,15 +110,15 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
             </div>
           </div>
         </div>
-
-        <div className="flex-none m-2  bg-white  ">
+               {/* second */}
+               <div className="flex-none m-2  bg-white  ">
          
           <div className="flex flex-col items-center justify-center">
 
           {minutes === 0 ? <h1>time over </h1> : <h1>uracya fite igihe</h1> }
            <div>
               <h1>
-         <label>     {question}</label>
+         <label   className="font-bold text-gray-700 uppercase">     {question}</label>
               </h1>
             </div>
 
@@ -158,11 +161,11 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
             <div>
               <div className="flex   ">
 
-              { index >0 &&  <button className=" bg-yellow-500 text-white mx-8 transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleBack} >
+              { index >0 &&  <button className=" bg-yellow-500 text-white mr-8 w-24 p-2 rounded-lg transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleBack} >
                   Back
                 </button>}
                
-                <button className="  bg-yellow-500 text-white  transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleNext} >
+                <button className="  bg-yellow-500 text-white w-24 p-2  rounded-lg transform hover:scale-110 motion-reduce:transform-none ..." onClick={handleNext} >
                   Next
                 </button>
 
@@ -172,7 +175,8 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
           </div>
          
         </div>
-
+               {/* third */}
+                  
         <div className="flex-1  bg-white">
           <div className="flex flex-col items-center justify-center">
             <span>
@@ -193,13 +197,30 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
                
 
                 <div>
-        { minutes === 0 && seconds === 0
+             { minutes === 0 && seconds === 0
             ? null
             : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
-        }
+           }
+          </div>
+          </div>
         </div>
-                </div>
-              </div>
+
+
+               </div>
+            </div>
+          </div>
+        </div>
+
+{/* bbbb */}
+
+              
+ 
+        <div className="flex   justify-between    ">
+      
+       
+
+       
+
             </div>
           </div>
         </div>

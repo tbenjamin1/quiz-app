@@ -68,8 +68,7 @@ if (answer != questions[currentIndex].correct_answer) {
   setChooseAnswer(true);
 
 
-// const newIndex = currentIndex + 1;
-//   setCurrentIndex(newIndex);
+
  
   
 }
@@ -89,13 +88,6 @@ const handleBack =()=>{
 }
 
 
-// timer 
-// const timer =(time)=>{
-//     console.log(time);
-//      console.log("time");
-//     const Data = time
-    
-// };
 
 
   return  questions.length > 0 ? (
@@ -103,7 +95,7 @@ const handleBack =()=>{
 
     {currentIndex >= questions.length  ? (
 
-      <div className=" flex items-center justify-center m-4"> 
+      <div > 
           
            <Feedback win={passed}  data={questions}  marks={score} />
           

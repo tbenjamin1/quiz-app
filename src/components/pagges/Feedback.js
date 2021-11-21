@@ -9,10 +9,12 @@ const Feedback = (props) => {
   return (
     <div>
 
-      <div className="flex flex-col  bg-gray-100 py-4 px-8">
-        <div className="flex flex-row  ">
+      <div className="bg-gray-100 my-2 ">
+          <div className="container mx-auto px-6">
+            <div className="sm:flex sm:mt-8">
+              <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
           {/* left */}
-          <div className="flex flex-col w-1/2  justify-center   items-center bg-white  sm:">
+          <div className="flex flex-col  items-center justify-center md:w-full  bg-white  ">
           
             <h1 className=" text-center font-bold m-8 text-xl">Review</h1>
             <div className="flex flex-col  justify-center   items-center ">
@@ -42,26 +44,29 @@ const Feedback = (props) => {
           </div>
           {/* right */}
 
-          <div className="flex flex-col  w-1/2  justify-center   items-center bg-yellow-100">
-            <h1 className=" text-center font-bold mb-4 text-xl">
+          <div className="flex flex-col  items-center justify-center md:w-full m-4 bg-yellow-100">
+             <h1 className=" text-center font-bold mb-4 text-xl">
               Develop Your Skills
-            </h1>
+               </h1>
               <div class="flex flex-col   justify-center   items-center ">
-            {props.data.map( dataa =>  <div className=" flex justify-center   items-center p-4" >
+                  {props.data.map( dataa =>  <div className=" flex justify-center   items-center p-4" >
            
-              <span className="">
-                <h1 className="">{dataa.question}</h1>
+                <span className="text-center">
+                <h1 className=" font-bold text-gray-700 uppercase">{dataa.question}</h1>
                 <p className="font-bold text-sm">{dataa.correct_answer}</p>
-              </span>
+                </span>
                  </div>
-               )}
+                   )}
                  </div>  
             
-          </div>
-        </div>
-        {/* bbb */}
-      </div>
+             </div>
 
+        </div>
+        
+      </div>
+ </div>
+ </div>
+<Footer/>
     
     </div>
   );
