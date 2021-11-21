@@ -78,30 +78,11 @@ const Footer = () => {
                   </h3>
                 </span>
               </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
-                  courses
-                </span>
-                <span className="my-2">
-                  <a
-                    href="#"
-                    className="text-yellow-500  text-md hover:text-yellow-500"
-                  >
-                    accessibility
-                  </a>
-                </span>
-                <span className="my-2">
-                  <a
-                    href="#"
-                    className="text-yellow-500  text-md hover:text-yellow-500"
-                  >
-                    usability
-                  </a>
-                </span>
-              </div>
+              
             </div>
           </div>
         </div>
+
         <div className="container mx-auto px-6">
           <div className="mt-16 border-t-2 border-yellow-500 flex flex-col items-center">
             <div className="sm:w-2/3 flex space-x-20 items-center text-center py-6">
