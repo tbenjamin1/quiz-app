@@ -63,51 +63,51 @@ const shuffledAnswers =[correct_answer ].sort(() => Math.random() - 0.5);
             <div className="flex-1 bg-white ">
           <div className="flex flex-col  items-center justify-center md:w-full  ">
          
-            <div className="inline-flex mx-2 space-x-4 space-y-8  ">
+            { index >=0 &&  <div className="inline-flex mx-2 space-x-4 space-y-8  ">
               <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
                 <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                   1
                 </div>
               </div>
-            </div>
-
-            <div className="bg-yellow-500 w-1 h-10"></div>
+            </div>}
+ <div className="bg-yellow-500 w-1 h-10"></div>
+            { index >=1 &&  
             <div className="inline-flex space-x-4 space-y-8 ">
               <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
                 <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
+                  2
                 </div>
               </div>
             </div>
-
+}
             <div className="bg-yellow-500 w-1 h-10"></div>
 
-            <div className="inline-flex space-x-4 space-y-8 ">
+          { index >=2 &&  <div className="inline-flex space-x-4 space-y-8 ">
               <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
                 <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
+                  3
                 </div>
               </div>
-            </div>
+            </div>}
                   
             <div className="bg-yellow-500 w-1 h-10"></div>
 
-            <div className="inline-flex space-x-4 space-y-8 ">
+           { index >= 3 && <div className="inline-flex space-x-4 space-y-8 ">
               <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
                 <div className=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
-                  1
+                  4
                 </div>
               </div>
-            </div>
+            </div>}
             <div className="bg-yellow-500 w-1 h-10"></div>
-
+{ index >= 4 && 
             <div className="inline-flex   space-x-4 space-y-8 mb-8">
               <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center   ">
                 <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
-                  1
+                  5
                 </div>
               </div>
-            </div>
+            </div>}
           </div>
         </div>
                {/* second */}

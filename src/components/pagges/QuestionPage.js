@@ -100,7 +100,7 @@ const handleBack =()=>{
            <Feedback win={passed}  data={questions}  marks={score} />
           
           </div>
-              ) :  <QuestionData data={questions[currentIndex]} handleAnswer={handleAnswer }
+              ) :  <QuestionData data={questions[currentIndex]}  handleAnswer={handleAnswer }
   
         
            handleBack={handleBack} 
