@@ -13,14 +13,34 @@ const Homepage = () => {
   };
 
   return (
-     <div className=" bg-gray-200  my-2 text-black-500 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex  sm:w-full text-center w-full mb-12">
-          {/* left */}
-          <div className="flex flex-col w-1/2  bg-white   ">
+     <div className=" bg-gray-200  my-2 text-black-500 body-font ">
+        
+          
+
+          {/* newwww */}
+
+       <div className="bg-white my-2 ">
+          <div className="container mx-auto px-6">
+            <div className="sm:flex sm:mt-8">
+              <div className="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
+                {/* <div>hehhh  </div> */}
+
+                 <div className="flex flex-col  bg-white   ">
             <h1 className=" text-center font-bold m-8 text-xl">Instruction</h1>
-            <div className="flex flex-col mx-4 ">
-              <div className="inline-flex space-x-4 space-y-8  ">
+
+            <div className="flex flex-col ">
+              <div className="flex space-x-4 space-y-8  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
+                    1
+                  </div>
+                </div>
+                <div>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  _Read each question carefully</p>
+                  </div>
+                </div>    
+                  
+             <div className="flex space-x-4 space-y-8  ">
                 <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
                   <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
@@ -30,46 +50,40 @@ const Homepage = () => {
                   <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  _Read each question carefully</p>
                   </div>
               </div>
-              <div className="inline-flex space-x-4 space-y-8 ">
-                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center  ">
+
+              <div className="flex space-x-4 space-y-8  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
                   <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">   _ After responding to a question, click on the "Next</p>
-                </div>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  _Read each question carefully</p>
+                  </div>
               </div>
-              <div className="inline-flex space-x-4 space-y-8 ">
-                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center     ">
+
+              <div className="flex space-x-4 space-y-8  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
                   <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base"> _If you select an incorrect response for a question, you can try again before you submit.</p>
-                </div>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  _Read each question carefully</p>
+                  </div>
               </div>
-              <div className="inline-flex space-x-4 space-y-8 ">
-                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
-                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
+
+            <div className="flex space-x-4 space-y-8  ">
+                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex items-center justify-center    ">
+                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center font-bold  ">
                     1
                   </div>
                 </div>
                 <div>
-                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">_The total score for the quiz is based on your responses  to all questions</p>
-                </div>
-              </div>
-             <div className="inline-flex space-x-4 space-y-8 ">
-                <div className=" w-10 h-10 bg-yellow-300 rounded-full flex  items-center justify-center    ">
-                  <div className=" w-5 h-5 bg-white rounded-full text-black text-center text-center font-bold  ">
-                    1
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">  _Read each question carefully</p>
                   </div>
-                </div>
-                <div>
-                  <p className="lg:w-2/3 mx-auto leading-relaxed text-base">_The total score for the quiz is based on your responses  to all questions</p>
-                </div>
               </div>
+
 
               <div>
                 <h1 className=" text-center font-bold  my-8 text-xl">
@@ -79,9 +93,10 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* right */}
 
-          <div className="flex flex-col  w-1/2  justify-center   items-center bg-yellow-100 sm:flex items-center justify-center ">
+               {/* hhhh */}
+
+               <div className="flex flex-col    bg-yellow-100  ">
             <h1 className=" text-center font-bold m-8 text-xl">
               Develop Your Skills
             </h1>
@@ -90,26 +105,24 @@ const Homepage = () => {
             </div>
             <div className="flex  items-center justify-center ">
 
-{/* <Link   to ="/pagges/QuestionPage"   > <button
-              
-className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 "
-              >
-
-                Take Quiz
-              </button></Link> */}
 
               <button
               onClick={handleClick}
-className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 "
+                     className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover:bg-yellow-400 "
               >
 
                 Take Quiz
               </button>
             </div>
           </div>
+               {/* hkhahvjf */}
+
+
+              </div>
+            </div>
+          </div>
         </div>
-
-
+     
 
 
 
@@ -248,7 +261,7 @@ className="py-2 px-2 font-medium  mb-8 text-white bg-yellow-500 rounded-lg hover
             </div>
           </div>
         </div>
-      </div>
+     
       <Footer />
     </div>
   );

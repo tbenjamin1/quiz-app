@@ -3,6 +3,7 @@ import Footer from "../UI/Footer";
 import Header from "../UI/Header";
 
 const Feedback = (props) => {
+   console.log(props.data)
 
   
   return (
@@ -47,6 +48,7 @@ const Feedback = (props) => {
             </h1>
               <div class="flex flex-col   justify-center   items-center ">
             {props.data.map( dataa =>  <div className=" flex justify-center   items-center p-4" >
+           
               <span className="">
                 <h1 className="">{dataa.question}</h1>
                 <p className="font-bold text-sm">{dataa.correct_answer}</p>
